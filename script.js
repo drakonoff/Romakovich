@@ -1,23 +1,10 @@
-"use strict"
-var money = prompt("Ваш бюджет на месяц?")
-var time = prompt("Введите дату в формате YYYY-MM-D")
-var appData = {
-    budjet: money,
-    timedata: time,
-    expenses: {},
-    optionalExpenses: {},
-    income: [],
-    savings:false
-};
+"use strict";
 
-for (let i=0; i<2; i++) {
-    let a=prompt("Введите обязательную статью расходов в этом месяце"),
-        b=prompt("Во сколько обойдется?");
+var pickRandomWord = function (words) {
+    return words[Math.floor(Math.random() * words.length)];
+    };
 
-    appData.expenses[a] = b
-}
+var randomWords = ["Планета", "Червяк", "Цветок", "Компьютер"];
 
 
-alert(appData.budjet/30);
-
-console.log(appData)
+console.log(pickRandomWord(randomWords))
