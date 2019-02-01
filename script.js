@@ -8,17 +8,16 @@ for (var i = 0; i <= 12; i++) {
 while(pers<20){
 	if(pers<0){
 		pers=0;
-		document.write("_0_сектор. ")
-	} else{
+		document.write("_0_сектор. ");
+	}else if(pers==6){
+		document.write("kabak")
+	}
+	
+	else{
 		var kubNumber=Math.floor(Math.random()*12);
 		pers+=kubik[kubNumber];
 		document.write("Ты сейчас на этой клетке - "+ pers+"<br>");
 		
 	}
 }
-var vvodite=prompt("Какой лучше?")
-var h=$("#klaus")
-h.text(vvodite)
-h.fadeout(3000)
-$("h1").fadeOut(3000);
-$("body").append("<p>Хэппи энд, поздравляем</p>")
+var zz=$("#koma");
