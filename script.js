@@ -1,23 +1,45 @@
-"use string";
-var kubik=[];
-var pers=0;
-for (var i = 0; i <= 12; i++) {
-	kubik[i]=-6+i;
-}
-
-while(pers<20){
-	if(pers<0){
-		pers=0;
-		document.write("_0_сектор. ");
-	}else if(pers==6){
-		document.write("kabak")
+var words = [
+	"программа",
+	"макака",
+	"прекрасный",
+	"оладушек"
+	];
+	// Выбираем случайное слово
+	var word = words[Math.floor(Math.random() * words.length)];
+	// Создаем итоговый массив
+	var answerArray = [];
+	for (var i = 0; i < word.length; i++) {
+	answerArray[i] = "_";
 	}
-	
-	else{
-		var kubNumber=Math.floor(Math.random()*12);
-		pers+=kubik[kubNumber];
-		document.write("Ты сейчас на этой клетке - "+ pers+"<br>");
-		
+	var remainingLetters = word.length;
+	var bi=3;
+	// Игровой цикл
+	while (remainingLetters > 0 && bi>0) {
+	// Показываем состояние игры
+	alert(answerArray.join(" "));
+   // Запрашиваем вариант ответа
+	var guess = prompt("Угадайте букву, или нажмите Отмена для выхода из игры.");
+	if (guess === null) {
+	// Выходим из игрового цикла
+	break;
+	} else if (guess.length !== 1) {
+	alert("Пожалуйста, введите одиночную букву.");
+	} else {
+		bi--;
+	// Обновляем состояние игры
+	for (var j = 0; j < word.length; j++) {
+	if (word[j] === guess) {
+	answerArray[j] = guess;
+	remainingLetters--;
 	}
-}
-var zz=$("#koma");
+	}
+	}
+	// Конец игрового цикла
+	}
+	// Отображаем ответ и поздравляем игрока
+	alert(answerArray.join(" "));
+	if (bi > 0) {
+		alert("Отлично! Было загадано слово " + word);
+	  } else {
+		alert("Очень плохо! Было загадано слово " + word);
+	  }
