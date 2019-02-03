@@ -45,7 +45,6 @@ $("#persicon").css({
     top: 250
  });
  
-/*
 var gols=0
 var goli=0
 $("#persicon").click(function () {
@@ -76,25 +75,7 @@ $("#scet").css({
     position: "absolute",
     left: 494,
     top: -18,
-    'color':'#15b300',
+    'color':'#0a244d',
     'fontSize': 40
  });
- */
-
-$("#persicon").click(function(){
-    $("#persicon").animate(function(index, value){
-        var newvalue={};
-        newvalue=value.left*50
-        return newvalue
-    });
-});
-    /*var proizv=Math.floor(Math.random()*2)
-    $("#persicon").animate({"left": 90}, "slow");
-     
-  });*/
-
-  function dv(){
-      var ds=1+1;
-      alert(ds)
-  }
-  (dv())
+ 
