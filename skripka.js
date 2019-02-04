@@ -39,43 +39,54 @@ function kubizm2(n){
 }
 
 
-$("#persicon").css({
-    position: "absolute",
-    left: 480,
-    top: 250
+$("#persicon").css({             //Позиция(базовая) персонажа
+    position: "absolute",     
+    left: 561,
+    top: 620
  });
  
 var gols=0
 var goli=0
-$("#persicon").click(function () {
-       $(this).offset(function(i, coord){
-            var proizv=Math.floor(Math.random()*2)
-            var chex=53.5*kubizm2(proizv)
-            var  newCoord = {};
-            newCoord.left=478;
-            newCoord.left = coord.left + chex;
-            if(newCoord.left<=100){
-                newCoord.left==100,
-                goli++
-                alert("Гоооол! Шотландцы: Ирландцы. " + gols + ":" + goli)
-                newCoord.left=478
-                $("#scet").text(gols +":" + goli)
-            } else if(newCoord.left>=850){
-                newCoord.left==850,
-                gols++,
-                alert("Гоооол! Шотландцы: Ирландцы. " + gols + ":" + goli)
-                newCoord.left=478,
-                $("#scet").text(gols +":" + goli)
+
+var knopka = document.getElementById("btn");
+knopka.offset=function(){
+    alert("Uraaaaaaa!")
+}
+
+
+
+
+
+var img = document.createElement("img");
+img.src = "person_opacity.png";
+
+
+var iconka = document.getElementById("persicon");
+iconka.onmouseover=function(){
+    iconka.src = "person_opacity.png";
+}
+iconka.onmouseout=function(){
+    iconka.src = "person.png";
+}
+
+var stepan=document.createTextNode("DSSSSSSSSSSSSSSSSSSSSSSSS")
+
+
+
+
+   
+    
+$('#btn').click(function(){
+    var daman=$("#persicon").offset().left
+    var daman2=$("#persicon").offset().top
+    if(daman>60){
+         $("#persicon").animate({ marginLeft: '-=57', marginTop: 0});
+            }else if(daman2>60){
+                $("#persicon").animate({ marginTop: "-=57"});
+            }else{
+                $("#persicon").animate({ marginLeft: '+=57'});
             }
-            return newCoord;
-       });
-    });
-$("#scet").text(gols +":" + goli)
-$("#scet").css({
-    position: "absolute",
-    left: 494,
-    top: -18,
-    'color':'#0a244d',
-    'fontSize': 40
- });
- 
+
+         console.log(daman,daman2)    
+});
+
